@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sfcrmr</title>
+    <title>Salesforce CRMR Connector</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+<!-- This is the code for Devise Flash Messages -->
+    <% flash.each do |name, message| %>
+      <%= content_tag(:div, message, class: "alert alert-success #{name}") %>
+    <% end %>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+
+<!-- Page Content -->
+   <%= yield %>
+
+   <!-- Footer -->
+   <footer class="small text-muted">
+     <div class="container">
+       <hr>
+       <center>
+         <p>© 2018 Steve Wagner, All Rights Reserved Proudly Made on Earth </p>
+       </center>
+     </div>
+   </footer>
+
+ </body>
 </html>

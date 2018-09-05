@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+      <h1> Welcome #{current_user.name}!</h1>
+    <% else %>
+      <h1> Signup with your Salesforce Account </h1>
+        <%= link_to "Sign in with Salesforce", "/auth/salesforce", id: "sign" %>
+  <% end %>
